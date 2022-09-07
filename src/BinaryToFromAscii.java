@@ -37,26 +37,25 @@ public class BinaryToFromAscii
     {
         StringBuilder textOutput = new StringBuilder();
         System.out.println("Enter Binary: ");
-        String f = input.nextLine();
-        int unicodeIndex = 0;
+        String SneakySpaceIncoming = input.nextLine();
         int u = 0;
-        String binary = f + " ";
+        String binary = SneakySpaceIncoming + " ";
 
         for(int i = 0; i < (binary.length()/9); i++)
         {
-                for(int w = 128; w > 0; w /= 2)
+            int unicodeIndex = 0;
+            for(int w = 128; w > 0; w /= 2)
+            {
+                String binarySnippet = binary.substring(u, u+1);
+                if(binarySnippet.equals("1"))
                 {
-                    String binarySnippet = binary.substring(u, u+1);
-                    if(binarySnippet.equals("1"))
-                    {
-                        unicodeIndex += w;
-                    }
-                    u++;
+                    unicodeIndex += w;
                 }
                 u++;
-                char letter = (char) unicodeIndex;
-                textOutput.append(letter);
-                unicodeIndex = 0;
+            }
+            u++;
+            char letter = (char) unicodeIndex;
+            textOutput.append(letter);
         }
         System.out.println(textOutput);
         run();
