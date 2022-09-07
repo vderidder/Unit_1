@@ -50,8 +50,7 @@ public class BinaryToFromAscii
 
             for(int e = 128; e > 0; e /= 2)
             {
-                System.out.println("||" + asciiValue +"||");
-                if((asciiValue - e) > 0)
+                if((asciiValue - e) >= 0)
                 {
                     binaryOutput.append("1");
                     asciiValue -= e;
@@ -64,6 +63,6 @@ public class BinaryToFromAscii
             binaryOutput.append(" ");
         }
         System.out.println(binaryOutput);
+        run();
     }
-// The issue is that the program does not recognize 1 in the binary output, so fix it so A = 0100 0001
 }
