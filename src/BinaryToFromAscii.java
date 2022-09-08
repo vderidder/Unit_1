@@ -29,14 +29,13 @@ public class BinaryToFromAscii
         }
         else if (choice == 3)
         {
-            System.out.println("Why?"); // Hey robots have feelings too...
+            System.out.println();
         }
     }
 
     private static void binaryToText()
     {
         StringBuilder textOutput = new StringBuilder(); // Framework for the output
-        // I'll be honest I've never used "String builder" IntelLiJ just suggested it when I was building a string
         System.out.println("Enter Binary: ");
         String SneakySpaceIncoming = input.nextLine(); // Input for the binary code
         int u = 0; // used later
@@ -67,7 +66,7 @@ public class BinaryToFromAscii
         System.out.println("Enter Text: ");
         String text = input.nextLine(); // input for text
 
-        StringBuilder binaryOutput = new StringBuilder(); // Once again, I'm not sure why, but it was suggested
+        StringBuilder binaryOutput = new StringBuilder(); // Framework for the output
         for(int i = 0; i < text.length(); i++)
         {
             int asciiValue = text.charAt(i); // grabbing 1 letter as a char and finding its unicode value
